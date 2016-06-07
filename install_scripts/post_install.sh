@@ -13,8 +13,9 @@ if [ $? != 0 ]; then
 fi
 
 cd /opt/codedeploy-agent || exit 1
-runuser -l ubuntu -c 'cd /opt/codedeploy-agent && bundle install --without test build --path vendor/'
+#runuser -l ubuntu -c 'cd /opt/codedeploy-agent && bundle install --without test build --path vendor/'
 #bundle install --without test build --path vendor/
+bundle install --without test build
 if [ $? = 0 ]; then
   echo "Installed."
 else
